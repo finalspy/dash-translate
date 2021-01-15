@@ -134,5 +134,13 @@ def translate(n_clicks, src_lang, tgt_lang, src_text):
 
 
 if __name__ == "__main__":
+    app.config.update({
+        # as the proxy server will remove the prefix
+        'routes_pathname_prefix': '/', 
+
+        # the front-end will prefix this string to the requests
+        # that are made to the proxy server
+        'requests_pathname_prefix': 'SAAGIE_BASE_PATH/'
+    })
     app.run_server(debug=True, host='0.0.0.0')
 
