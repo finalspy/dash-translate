@@ -19,9 +19,6 @@ model_name = "Helsinki-NLP/opus-mt-en-ROMANCE"
 tokenizer = MarianTokenizer.from_pretrained(model_name)
 model = MarianMTModel.from_pretrained(model_name).to(device)
 
-app = dash.Dash(__name__)
-server = app.server
-
 # Create app
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
